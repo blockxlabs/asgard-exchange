@@ -35,7 +35,8 @@ const environmentFileContent = `
 export const environment = {
    production: ${isProduction},
    network: '${isTestnet ? 'testnet' : 'chaosnet'}',
-   blockchairKey: '${process.env.BLOCKCHAIR_KEY}'
+   blockchairKey: '${process.env.BLOCKCHAIR_KEY}',
+   devMidgardURL: '${process.env.DEV_MIDGARD_URL}'
 };
 `;
 // write the content to the respective file

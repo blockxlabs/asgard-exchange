@@ -5,6 +5,7 @@ import { User } from '../_classes/user';
 import { Client as binanceClient, } from '@xchainjs/xchain-binance';
 import { Client as bitcoinClient, } from '@xchainjs/xchain-bitcoin';
 import { Client as thorchainClient, } from '@xchainjs/xchain-thorchain';
+import { Client as polkadotClient } from '@xchainjs/xchain-polkadot';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,7 @@ export class KeystoreService {
     const userBinanceClient = new binanceClient({network, phrase});
     const userBtcClient = new bitcoinClient({network, phrase, nodeUrl: blockchairUrl, nodeApiKey: environment.blockchairKey});
     const userThorchainClient = new thorchainClient({network, phrase});
+    const userPolkadotClient = new polkadotClient({network, phrase});
     const thorAddress = await userThorchainClient.getAddress();
 
     return new User({
@@ -29,7 +31,8 @@ export class KeystoreService {
       clients: {
         binance: userBinanceClient,
         bitcoin: userBtcClient,
-        thorchain: userThorchainClient
+        thorchain: userThorchainClient,
+        polkadot: userPolkadotClient
       }
     });
   }

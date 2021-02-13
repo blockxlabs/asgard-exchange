@@ -18,6 +18,7 @@ export class UserSettingsDialogComponent implements OnInit, OnDestroy {
   subs: Subscription[];
   binanceAddress: string;
   bitcoinAddress: string;
+  polkadotAddress: string;
   thorAddress: string;
   loading: boolean;
   pendingTxCount: number;
@@ -60,6 +61,10 @@ export class UserSettingsDialogComponent implements OnInit, OnDestroy {
 
             if (this.user.clients.thorchain) {
               this.thorAddress = await this.user.clients.thorchain.getAddress();
+            }
+
+            if (this.user.clients.polkadot) {
+              this.polkadotAddress = await this.user.clients.polkadot.getAddress();
             }
 
           }

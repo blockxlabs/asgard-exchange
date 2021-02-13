@@ -57,6 +57,18 @@
 
           </div>
 
+
+          <div *ngIf="polkadotAddress" class="uni-input user-address" (click)="selectAddress(polkadotAddress, 'POLKA')">
+            <label>DOT Address</label>
+
+            <div class="flxr flxr--align-center" style="width: 100%">
+              <div class="asset-icon-container">
+                <img class="asset-icon" name="polkadot-icon" src="assets/images/token-icons/polkadot.svg" />
+              </div>
+              <input [value]="polkadotAddress" name="polkadot-address" [disabled]="true" />
+            </div>
+          </div>
+
           <div class="flxr flxr--just-end">
             <button style="margin-right: 6px" mat-flat-button (click)="mode = 'VIEW_PHRASE'">
               <mat-icon>visibility</mat-icon>

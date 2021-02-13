@@ -33,6 +33,10 @@ export class Asset {
           this.iconPath = 'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/binance/assets/RUNE-B1A/logo.png';
           break;
 
+        case 'DOT.DOT':
+          this.iconPath = 'assets/images/token-icons/polkadot.svg';
+          break;
+  
         default:
           console.warn(`Icon not available for poolName ${poolName}. Add override in src\\app\\_classes\\asset.ts`);
           this.iconPath = 'assets/images/token-icons/unknown.png';
